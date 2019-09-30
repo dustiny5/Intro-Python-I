@@ -49,5 +49,15 @@ def program():
 
     # Restart program if there's an error
     program()
+  finally:
+    restart = input('Enter a new date? y or n: ')
+    while (restart != 'y') and (restart != 'n'):
+      restart = input('Please input y or n: ')
+    else:
+      if restart =='y':
+        program()
+      elif restart =='n':
+        print('End Program')
+
 
 program()
