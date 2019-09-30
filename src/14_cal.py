@@ -22,3 +22,32 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+def program():
+  # Inputs for month and year
+  month = input('Please enter month: ')
+  year = input('Please enter year: ')
+
+  try:
+    # Return month current month if no inputs are entered
+    if (month == '') and (year == ''):
+      print('The current month is: ', datetime.now().month)
+
+    # Returns month and current year if only month is entered
+    elif (month != '') and (year ==''):
+      calendar.prmonth(datetime.now().year, int(month))
+
+    # Returns the whole calendar of that year if month is not entered
+    elif (month == '') and (year !=''):
+      calendar.prcal(int(year))
+
+    # Returns the month and year if both are entered
+    else:
+      calendar.prmonth(int(year), int(month))
+  except ValueError:
+    print('Inputs are not in integer. Please try again.')
+
+    # Restart program if there's an error
+    program()
+
+program()
