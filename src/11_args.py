@@ -33,7 +33,7 @@ print(f2(*a))    # Should print 22
 
 # YOUR CODE HERE
 def f3(*args):
-    if len(args) == 2:
+    if len(args) >= 2:
         return sum(args)
     else:
         return args[0] + 1
@@ -53,12 +53,7 @@ print(f3(8))     # Should print 9
 def f4(**kwargs):
     for key, value in kwargs.items():
             print(f'key:{key}, value:{value}')
-    # if len(args) == 0:
-    #     for key, value in kwargs.items():
-    #         print(f'key:{key}, value:{value}')
-    # else:
-    #     for key, value in args[0].items():
-    #         print(f'key:{key}, value:{value}')
+
 # Should print
 # key: a, value: 12
 # key: b, value: 30
